@@ -1,4 +1,4 @@
-# [gauth-export](https://korki43.github.io/gauth-export/)
+# [gauth-export](https://kiehnek.github.io/gauth-export/)
 
 Transform Google Authenticator Migration QR Codes to plain otpauth URIs.
 
