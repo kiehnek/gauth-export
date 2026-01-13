@@ -16,9 +16,14 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "skipLibCheck": true
   },
-  "exclude": ["node_modules", "dist", "./*.js", "*.config.ts"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "./*.js",
+    "*.config.ts",
+    "src/**/*.test.ts"
+  ]
 }

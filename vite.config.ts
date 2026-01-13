@@ -8,4 +8,8 @@ export default defineConfig({
     cssCodeSplit: false,
     assetsInlineLimit: 100000000,
   },
+  test: {
+    environment: "node",
+    include: ["src/**/*.test.ts"],
+  },
 });

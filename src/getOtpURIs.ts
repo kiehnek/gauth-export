@@ -8,7 +8,7 @@ import { HOTP, TOTP, Secret } from 'otpauth';
 
 export function getOtpAuthUris(otpExportParams: OtpParameters[]) {
   return otpExportParams.map((account) => {
-    const secret = new Secret({ buffer: account.secret });
+    const secret = new Secret({ buffer: toArrayBuffer(account.secret) });
     if (account.type === OtpType.OTP_TYPE_TOTP) {
       return new TOTP({
         issuer: account.issuer,
@@ -30,6 +30,13 @@ export function getOtpAuthUris(otpExportParams: OtpParameters[]) {
       return `${account.name}: No Type specified, couln't transform.`;
     }
   });
+}
+
+function toArrayBuffer(value: Uint8Array): ArrayBuffer {
+  return value.buffer.slice(
+    value.byteOffset,
+    value.byteOffset + value.byteLength
+  ) as ArrayBuffer;
 }
 
 function getAlgFromEnum(alg: Algorithm) {
