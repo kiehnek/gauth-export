@@ -10,7 +10,7 @@
     "test:run": "vitest run",
     "test:ui": "vitest --ui"
   },
-  "author": "korki",
+  "author": "KK",
   "dependencies": {
     "bootstrap": "^5.3.8",
     "jsqr": "^1.4.0",
