@@ -12,7 +12,7 @@
   },
   "author": "KK",
   "dependencies": {
-    "bootstrap": "^5.3.8",
+    "bootstrap": "^4.6.2",
     "jsqr": "^1.4.0",
     "otpauth": "^9.4.1",
     "protobufjs": "^8.0.0"
