@@ -1,13 +1,14 @@
 :root {
-  --bs-link-color: #6c757d;
+  --bs-link-color: ;
   --bs-link-hover-color: #5c636a;
-  --bs-code-color: #212529;
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: #495057;
-  opacity: 1;
+a {
+  color: var(--bs-link-color);
+
+  &:hover {
+    color: var(--bs-link-hover-color);
+  }
 }
 
 
