@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { getOtpAuthUris } from '../getOtpURIs';
+import { getOtpAuthUris } from '../src/getOtpURIs';
 import {
   Algorithm,
   DigitCount,
   OtpType,
-} from '../MigrationPayload';
+} from '../src/MigrationPayload';
 
 describe('getOtpAuthUris', () => {
   it('builds OTPAuth URIs for TOTP and HOTP', () => {

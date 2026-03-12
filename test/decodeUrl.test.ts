@@ -1,12 +1,12 @@
 import protobuf from 'protobufjs';
 import { describe, expect, it } from 'vitest';
-import { decodeMigrationUrl } from '../decodeUrl';
+import { decodeMigrationUrl } from '../src/decodeUrl';
 import {
   Algorithm,
   DigitCount,
   OtpType,
-} from '../MigrationPayload';
-import { MigrationPayloadMessageProto } from '../MigrationPayloadMessage';
+} from '../src/MigrationPayload';
+import { MigrationPayloadMessageProto } from '../src/MigrationPayloadMessage';
 
 function buildMigrationUrl() {
   const { root } = protobuf.parse(MigrationPayloadMessageProto);
