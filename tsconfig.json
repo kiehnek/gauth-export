@@ -24,6 +24,7 @@
     "dist",
     "./*.js",
     "*.config.ts",
-    "src/**/*.test.ts"
+    "src/**/*.test.ts",
+    "test"
   ]
 }
