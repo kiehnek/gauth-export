@@ -2,6 +2,8 @@ import { readImageFromFile } from './readImageFile';
 import jsQR from 'jsqr';
 import { decodeMigrationUrl } from './decodeUrl';
 import { getOtpAuthUris } from './getOtpURIs';
+import 'bootstrap/dist/css/bootstrap.css';
+import './style/main.scss';
 
 
 const form = document.querySelector('form') as HTMLFormElement;
@@ -32,11 +34,12 @@ MigrationURIInput.addEventListener('focusout', () => {
   processMigrationURI(MigrationURIInput.value);
 });
 
-qrFileInput.addEventListener('change', async (e: any) => {
+qrFileInput.addEventListener('change', async (event: Event) => {
   try {
     errorBox.innerText = '';
-    if (e.target.files && e.target.files[0]) {
-      const file = e.target.files[0];
+    const target = event.target as HTMLInputElement | null;
+    if (target?.files && target.files[0]) {
+      const file = target.files[0];
       qrFileLabel.innerText = file.name;
       const imgData = await readImageFromFile(file);
       const migrationURI = jsQR(imgData.data, imgData.width, imgData.height);
@@ -66,7 +69,6 @@ function processMigrationURI(uri: string) {
       uriListHeader.classList.remove('hidden');
       uriDownloadLink.href = `data:text/plain;base64,${btoa(uris.join('\n'))}`;
       uriDownloadLink.download = `gauth-export-${Date.now()}.txt`;
-      console.log(uriDownloadLink);
       uris.forEach((uri) => {
         const listElement = document.createElement('div');
         listElement.classList.add('list-group-item');

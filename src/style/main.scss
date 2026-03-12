@@ -1,19 +1,14 @@
-$link-color: #6c757d;
-$code-color: #212529;
-$input-placeholder-color: #495057;
+:root {
+  --bs-link-color: #6c757d;
+  --bs-link-hover-color: #5c636a;
+  --bs-code-color: #212529;
+}
 
-@import "bootstrap/scss/_functions";
-@import "bootstrap/scss/_variables";
-@import "bootstrap/scss/_mixins";
-@import "bootstrap/scss/_utilities";
-@import "bootstrap/scss/_reboot";
-@import "bootstrap/scss/_type";
-@import "bootstrap/scss/_code";
-@import "bootstrap/scss/_grid";
-@import "bootstrap/scss/_forms";
-@import "bootstrap/scss/_buttons";
-@import "bootstrap/scss/_custom-forms";
-@import "bootstrap/scss/_list-group";
+input::placeholder,
+textarea::placeholder {
+  color: #495057;
+  opacity: 1;
+}
 
 
 .list-group-item {
